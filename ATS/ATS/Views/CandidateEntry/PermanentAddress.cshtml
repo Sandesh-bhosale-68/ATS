@@ -1,0 +1,369 @@
+﻿@model ATS.Models.AddressModel
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/mainStyle.css" rel="stylesheet">
+
+
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <link href="~/css/mainStyle.css" rel="stylesheet">
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+ 
+</head>
+<body>
+    @{
+        
+        string houseNumberValue = Model?.HouseNumber ?? "";
+        string StreetNameval = Model?.StreetName ?? "";
+        string StateValue = Model?.State ?? "";
+        string CityValue = Model?.City ?? "";
+        int PinCodeValue = Model?.PinCode ?? 0;
+        string AreaValue = Model?.Area ?? "";
+        string LandMarkValue = Model?.LandMark ?? "";
+
+    }
+    <div class="container-fluid box">
+        <div class="row col-md-12 header" id="header">
+            <div class="col-sm-2 logospace">
+                <img class="" src="~/Images/Logo.png" />
+            </div>
+            <div class="col-sm-10 headerBtns">
+                <span class="profilePic pullright">
+                    <img src="~/Images/Avatar.png" />
+                </span>
+                <div class="btn-group pullright loggedInBtn">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle loggedIn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu logout">
+                        <a href="#">Logout</a>
+                    </ul>
+                </div>
+
+                <span class="notificationIcon pullright">
+                    <img src="~/Images/icon_notification.png" />
+                </span>
+            </div>
+        </div>
+        <div class="row flex-nowrap content">
+            <div class="col-auto col-md-3 col-xl-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start text-white">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle active ">
+                                <img src="~/Images/icon_home.png" /><span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_dashboard.png" /><span class="ms-1 d-none d-sm-inline">Menu 1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_inbox.png" /><span class="ms-1 d-none d-sm-inline">Menu 2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_products.png" /><span class="ms-1 d-none d-sm-inline">Menu 3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_Invoices.png" /><span class="ms-1 d-none d-sm-inline">Menu 4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_customers.png" /><span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_chat-room.png" /><span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_calendar.png" /><span class="ms-1 d-none d-sm-inline">Menu 7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_help-center.png" /><span class="ms-1 d-none d-sm-inline">Menu 8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_setting.png" /><span class="ms-1 d-none d-sm-inline">Menu 9</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="col permanentAddress">
+                <div class="col-sm-8 content2">
+                    <div class="sectionHeading">
+                        <h4>Permanent Address</h4>
+                    </div>
+                    <div class="col-sm-12 form">
+                        <form id="permanentAddressForm" asp-action="PermanentAddress" method="post">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label><span class="required">*</span> required fields</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputHouseNumber">House Number <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="HouseNumber" aria-describedby="" placeholder="Enter House Number" value="@houseNumberValue">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputLandmark">Landmark <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="LandMark" aria-describedby="" placeholder="Enter Landmark" value="@LandMarkValue">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputStreetName">Street Name <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="StreetName" aria-describedby="" placeholder="Enter Street Name" value="@StreetNameval">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputArea">Area <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="Area" aria-describedby="" placeholder="Enter Area" value="@AreaValue">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputCity">City <span class="required"> *</span></label>
+                                        <select asp-for="City" class="form-control" >
+                                            <option value="">Select City</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Chennai">Chennai</option>
+                                            <option value="Mumbai">Mumbai</option>
+                                            <option value="Kolkata">Kolkata</option>
+                                            <option value="Bangalore">Bangalore</option>
+                                            <option value="Hyderabad">Hyderabad</option>
+                                            <option value="Ahmedabad">Ahmedabad</option>
+                                            <option value="Pune">Pune</option>
+                                            <option value="Jaipur">Jaipur</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputPincode">Pincode <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="PinCode" aria-describedby="" placeholder="Enter Pincode" value="@PinCodeValue">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputState">State <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="State" aria-describedby="" placeholder="Enter State" value="@StateValue">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button type="submit" id="sameAsCurrentAddressBtn" class="btn btn-primary  btn-sm">Same as Current Address</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <br /><br />
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-previous" onclick="handlePrevImageClick()"><img src="~/Images/icon_previous.png" /><label> Previous</label></button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">&nbsp;</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-next btn-pullright" onclick="handleImageClick()">Next<img src="~/Images/icon_next.png" /></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Attach a click event handler to the button
+            $("#sameAsCurrentAddressBtn").click(function () {
+        
+                $("#permanentAddressForm").submit();
+            });
+        });
+    </script>
+    <script>
+        function handlePrevImageClick() {
+
+
+            var url = '@Url.Action("CurrentAddress", "CandidateEntry")';
+            window.location.href = url;
+        }
+
+
+        function handleImageClick() {
+            try {
+
+                if (!validateForm()) {
+                    return;
+                }
+
+                var houseNumber = $('#HouseNumber').val();
+                var streetName = $('#StreetName').val();
+                var state = $('#State').val();
+                var city = $('#City').val();
+                var pinCode = $('#PinCode').val();
+                var area = $('#Area').val();
+                var landMark = $('#LandMark').val();
+
+                var formData = {
+                    HouseNumber: houseNumber,
+                    StreetName: streetName,
+                    State: state,
+                    City: city,
+                    PinCode: pinCode,
+                    Area: area,
+                    LandMark: landMark
+                };
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/CandidateEntry/PermentAddRedirect',
+                    data: formData,
+                    success: function (data) {
+                        console.log('Success:', data);
+
+                        window.location.href = '/CandidateEntry/CandidateOtherDetails';
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+
+                    }
+                });
+            } catch (ex) {
+                console.error('Exception:', ex);
+
+            }
+        }
+
+        function isInt(value) {
+            return /^\d+$/.test(value);
+        }
+
+        // Function to check if a value is not empty
+        function isNotEmpty(value) {
+            return value.trim() !== '';
+        }
+
+        // Function to validate the form fields
+        function validateForm() {
+            var pinCode = $("#PinCode").val();
+            var houseNumber = $("#HouseNumber").val();
+            var streetName = $("#StreetName").val();
+            var state = $("#State").val();
+            var city = $("#City").val();
+            var area = $("#Area").val();
+            var landMark = $("#LandMark").val();
+
+            // Validate PinCode
+            if (!isInt(pinCode)) {
+                alert('PinCode must be an integer.');
+                return false;
+            }
+
+            // Validate other textboxes as needed
+            if (!isNotEmpty(houseNumber)) {
+                alert('House Number is required.');
+                return false;
+            }
+
+            if (!isNotEmpty(streetName)) {
+                alert('StreetName is required.');
+                return false;
+            }
+
+            if (!isNotEmpty(state)) {
+                alert('State is required.');
+                return false;
+            }
+
+            if (!isNotEmpty(city)) {
+                alert('City is required.');
+                return false;
+            }
+
+            if (!isNotEmpty(area)) {
+                alert('Area is required.');
+                return false;
+            }
+
+            if (!isNotEmpty(landMark)) {
+                alert('LandMark is required.');
+                return false;
+            }
+
+
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>

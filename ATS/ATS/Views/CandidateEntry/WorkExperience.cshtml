@@ -1,0 +1,357 @@
+﻿@model ATS.Models.WorkExperienceModel
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/mainStyle.css" rel="stylesheet">
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <link href="/css/mainStyle.css" rel="stylesheet">
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+   
+</head>
+<body>
+    <div class="container-fluid box">
+        <div class="row col-md-12 header" id="header">
+            <div class="col-sm-2 logospace">
+                <img class="" src="~/Images/Logo.png" />
+            </div>
+            <div class="col-sm-10 headerBtns">
+                <span class="profilePic pullright">
+                    <img src="~/Images/Avatar.png" />
+                </span>
+                <div class="btn-group pullright loggedInBtn">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle loggedIn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu logout">
+                        <a href="#">Logout</a>
+                    </ul>
+                </div>
+
+                <span class="notificationIcon pullright">
+                    <img src="~/Images/icon_notification.png" />
+                </span>
+            </div>
+        </div>
+        <div class="row flex-nowrap content">
+            <div class="col-auto col-md-3 col-xl-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start text-white">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle active ">
+                                <img src="~/Images/icon_home.png" /><span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_dashboard.png" /><span class="ms-1 d-none d-sm-inline">Menu 1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_inbox.png" /><span class="ms-1 d-none d-sm-inline">Menu 2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_products.png" /><span class="ms-1 d-none d-sm-inline">Menu 3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_Invoices.png" /><span class="ms-1 d-none d-sm-inline">Menu 4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_customers.png" /><span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_chat-room.png" /><span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_calendar.png" /><span class="ms-1 d-none d-sm-inline">Menu 7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_help-center.png" /><span class="ms-1 d-none d-sm-inline">Menu 8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_setting.png" /><span class="ms-1 d-none d-sm-inline">Menu 9</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="col workExperience">
+                <div class="col-sm-8 content2">
+                    <div class="sectionHeading">
+                        <h4>Work Experience</h4>
+                    </div>
+                    <div class="col-sm-12 form">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label><span class="required">*</span> required fields</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputWorkExperience" asp-for="lblExp">Work Experience <span class="required"> *</span></label>
+                                        <select asp-for="dllWork" class="form-control" onchange="handleDropdownChange(this)">
+                                            <option value="">Select Education Level</option>
+                                            <option value="fresher">Fresher</option>
+                                            <option value="experience">Experience</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 otp-section" style="display:none">
+                                    <div class="form-group">
+                                        <label for="inputExperienceYrs">Experience (no. of years) <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="NumberOfExp"  aria-describedby="" placeholder="Enter Experience (no. of years)">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 otp-section" style="display:none">
+                                    <div class="form-group">
+                                        <label for="inputORGCategory">ORG category <span class="required"> *</span></label>
+                                        <select class="form-control" asp-for="dllWorkArea">
+                                            <option value="">Select Working Area</option>
+                                            <option value="BPO">BPO</option>
+                                            <option value="NonBPO">Non-BPO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 otp-section" style="display:none">
+                                    <div class="form-group">
+                                        <label for="inputOrgName" asp-for="lblorgName">Organisation name <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="ORGName" aria-describedby="" placeholder="Enter Organisation name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 otp-section" style="display:none">
+                                    <div class="form-group">
+                                        <label for="inputDesignation" asp-for="lblDesignation">Designation<span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="Designation" aria-describedby="" placeholder="Enter Designation">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 otp-section" style="display:none">
+                                    <div class="form-group">
+                                        <label for="inputMonthlyCTC" asp-for="lclctc">Monthly CTC <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="CTC" aria-describedby="" placeholder="Enter Monthly CTC">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6 otp-section" style="display:none">
+                                    <div class="form-group" >
+                                        <label for="inputLastOrg" asp-for="lblLastORJJWD">Last organisation joined <span class="required"> *</span></label>
+                                        <input type="date" class="form-control" asp-for="LastORGJED" aria-describedby="" placeholder="Enter Last organisation joined">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 otp-section" style="display:none">
+                                    <div class="form-group">
+                                        <label for="inputLastOrgLWD" asp-for="lblLWD">Last organisation LWD <span class="required"> *</span></label>
+                                        <input asp-for="LWD" class="form-control" type="date" />
+                                  
+                                    </div>
+                                </div>
+                            </div>
+                            <br /><br />
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-previous" onclick="handlePrevImageClick()"><img src="~/Images/icon_previous.png" /><label> Previous</label></button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">&nbsp;</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-next btn-pullright" onclick="handleImageClick()">Next<img src="~/Images/icon_next.png" /></button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        function handleDropdownChange(selectElement) {
+            var selectedValue = selectElement.value;
+
+
+
+
+
+            if (selectedValue === 'experience') {
+                $(".otp-section").show();
+            } else if (selectedValue === 'fresher') {
+                $(".otp-section").hide();
+            }
+            // You can use the selectedValue as needed
+            // For example, update other elements, make an AJAX call, etc.
+        }
+    </script>
+
+    <script>
+        function handleImageClick() {
+            addToLocalStorage();
+            validateExperienceSection();
+
+
+            var formData = {
+                dllWork: $("#dllWork").val(),
+                lblExp: $("#lblExp").val(),
+                NumberOfExp: $("#NumberOfExp").val(),
+                dllWorkArea: $("#dllWorkArea").val(),
+                lblorgName: $("#lblorgName").val(),
+                ORGName: $("#ORGName").val(),
+                lblDesignation: $("#lblDesignation").val(),
+                Designation: $("#Designation").val(),
+                lclctc: $("#lclctc").val(),
+                CTC: $("#CTC").val(),
+                lblLastORJJWD: $("#lblLastORJJWD").val(),
+                LastORGJED: $("#LastORGJED").val(),
+                lblLWD: $("#lblLWD").val(),
+                LWD: $("#LWD").val()
+            };
+
+            // Make an AJAX POST request
+            $.ajax({
+                type: 'POST',
+                url: '/CandidateEntry/WorkExperience',
+                data: formData,
+                success: function (data) {
+                    console.log(data);
+                    window.location.href = '/CandidateEntry/CurrentAddress';
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+    </script>
+    <script>
+        function addToLocalStorage() {
+            
+            localStorage.setItem('dllWork', $("#dllWork").val());
+            localStorage.setItem('NumberOfExp', $("#NumberOfExp").val());
+            localStorage.setItem('dllWorkArea', $("#dllWorkArea").val());
+            localStorage.setItem('ORGName', $("#ORGName").val());
+            localStorage.setItem('Designation', $("#Designation").val());
+            localStorage.setItem('CTC', $("#CTC").val());
+            localStorage.setItem('LastORGJED', $("#LastORGJED").val());
+            localStorage.setItem('LWD', $("#LWD").val());
+        }
+
+        function validateExperienceSection() {
+            var orgName = $("#ORGName").val();
+            var designation = $("#Designation").val();
+            var ctc = $("#CTC").val();
+
+            if (!orgName || !designation || !ctc) {
+                alert('Please fill in all fields in the experience section.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+    <script>
+        function handlePrevImageClick() {
+            addToLocalStorage();
+            var url = '@Url.Action("QualificationDetails", "CandidateEntry")';
+            window.location.href = url;
+        }
+
+
+
+        $(document).ready(function () {
+
+            //// Check and set values from localStorage for the new form
+            //if (localStorage.getItem('dllWork') !== null) {
+            //    $('select[name="dllWork"]').val(localStorage.getItem('dllWork'));
+            //    handleDropdownChange($('select[name="dllWork"]'));
+            //}
+
+            if (localStorage.getItem('NumberOfExp') !== null) {
+                $('input[name="NumberOfExp"]').val(localStorage.getItem('NumberOfExp'));
+            }
+
+            if (localStorage.getItem('dllWorkArea') !== null) {
+                $('select[name="dllWorkArea"]').val(localStorage.getItem('dllWorkArea'));
+            }
+
+            if (localStorage.getItem('ORGName') !== null) {
+                $('input[name="ORGName"]').val(localStorage.getItem('ORGName'));
+            }
+
+            if (localStorage.getItem('Designation') !== null) {
+                $('input[name="Designation"]').val(localStorage.getItem('Designation'));
+            }
+
+            if (localStorage.getItem('CTC') !== null) {
+                $('input[name="CTC"]').val(localStorage.getItem('CTC'));
+            }
+
+            if (localStorage.getItem('LastORGJED') !== null) {
+                $('input[name="LastORGJED"]').val(localStorage.getItem('LastORGJED'));
+            }
+
+            if (localStorage.getItem('LWD') !== null) {
+                $('input[name="LWD"]').val(localStorage.getItem('LWD'));
+            }
+
+
+        });
+
+
+    </script>
+</body>
+
+</html>

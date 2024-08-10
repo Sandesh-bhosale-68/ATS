@@ -1,0 +1,371 @@
+﻿
+@model ATS.Models.PersonalDetailsModel
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/mainStyle.css" rel="stylesheet">
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js//bootstrap.bundle.min.js"></script>
+    <link href="/css/mainStyle.css" rel="stylesheet">
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+</head>
+<body>
+    <div class="container-fluid box">
+        <div class="row col-md-12 header" id="header">
+            <div class="col-sm-2 logospace">
+                <img class="" src="~/Images/Logo.png" />
+            </div>
+            <div class="col-sm-10 headerBtns">
+                <span class="profilePic pullright">
+                 
+                    <img src="~/Images/Avatar.png" />
+                </span>
+                <div class="btn-group pullright loggedInBtn">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle loggedIn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu logout">
+                        <a href="#">Logout</a>
+                    </ul>
+                </div>
+
+                <span class="notificationIcon pullright">
+                    <img src="~/Images/icon_notification.png" />
+                </span>
+            </div>
+        </div>
+        <div class="row flex-nowrap content">
+            <div class="col-auto col-md-3 col-xl-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start text-white">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle active ">
+                                <img src="~/Images/icon_home.png" /><span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_dashboard.png" /><span class="ms-1 d-none d-sm-inline">Menu 1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_inbox.png" /><span class="ms-1 d-none d-sm-inline">Menu 2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_products.png" /><span class="ms-1 d-none d-sm-inline">Menu 3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_Invoices.png" /><span class="ms-1 d-none d-sm-inline">Menu 4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_customers.png" /><span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_chat-room.png" /><span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_calendar.png" /><span class="ms-1 d-none d-sm-inline">Menu 7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_help-center.png" /><span class="ms-1 d-none d-sm-inline">Menu 8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_setting.png" /><span class="ms-1 d-none d-sm-inline">Menu 9</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="col perDetails">
+                <div class="col-sm-8 content2">
+                    <div class="sectionHeading">
+                        <h4>Personal Details</h4>
+                    </div>
+                    <div class="col-sm-12 form">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label><span class="required">*</span> required fields</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputFirstName">First Name <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="FirstName" aria-describedby="" placeholder="Enter First Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputLastName">Last Name <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="LastName" aria-describedby="" placeholder="Enter Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputMotherName">Mother’s Name <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="MotherName" aria-describedby="" placeholder="Enter Mother's Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputFatherName">Father’s Name <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="FatherName" aria-describedby="" placeholder="Enter Father’s Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputAadhaarName">Name as per Aadhaar <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="AdharName" aria-describedby="" placeholder="Enter Name as per Aadhaar">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputGender">Gender <span class="required"> *</span></label>
+                                        <select asp-for="Gender" class="form-control">
+                                            <option value="">Select Gender</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputEmergencyCont">Emergency Contact Details <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="EmergencyContactDetails" aria-describedby="" placeholder="Enter Emergency Contact Details">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputBloodGroup">Blood Group <span class="required"> *</span></label>
+                                        <select asp-for="BloodGroup" class="form-control">
+                                            <option value="">Select Blood Group</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="O+">O+</option>
+                                            <option value="O-">O-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputRef1">1 Reference to join OPO <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="Ref1" aria-describedby="" placeholder="Enter 1st Reference to join OPO">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputRef2">2 Reference to join OPO <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="Ref2" aria-describedby="" placeholder="Enter 2nd Reference to join OPO">
+                                    </div>
+                                </div>
+                            </div><br /><br />
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-previous" onclick="handlePrevImageClick()"><img src="~/Images/icon_previous.png" /><label> Previous</label></button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">&nbsp;</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-next btn-pullright" onclick="handleImageClick()">Next<img src="~/Images/icon_next.png" /></button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        function handlePrevImageClick() {
+            LocalStorage();
+            var url = '@Url.Action("FillCandidateDetails", "CandidateEntry")';
+            window.location.href = url;
+        }
+        function validateForm() {
+
+            var firstName = document.getElementById("FirstName").value;
+            var emergencyContact = document.getElementById("EmergencyContactDetails").value;
+            var ref1 = document.getElementById("Ref1").value;
+            var ref2 = document.getElementById("Ref2").value;
+            if (firstName.trim() === "") {
+                alert("Please enter a valid First Name.");
+                return;
+            }
+            if (!/^\d{10}$/.test(emergencyContact)) {
+                alert("Please enter a valid 10-digit Emergency Contact number.");
+                return;
+            }
+            if (!isNaN(ref1) || !isNaN(ref2)) {
+                alert("References should not be numeric.");
+                return;
+            }
+            return true;
+        }
+
+        function handleImageClick() {
+
+            validateForm();
+            LocalStorage();
+
+            $.ajax({
+                type: 'POST',
+                url: '/CandidateEntry/PersonalDetails',
+                data: {
+                    FirstName: localStorage.getItem('FirstName'),
+                    FatherName: localStorage.getItem('FatherName'),
+                    MotherName: localStorage.getItem('MotherName'),
+                    LastName: localStorage.getItem('LastName'),
+                    AdharName: localStorage.getItem('AdharName'),
+                    Gender: localStorage.getItem('Gender'),
+                    EmergencyContactDetails: localStorage.getItem('EmergencyContactDetails'),
+                    BloodGroup: localStorage.getItem('BloodGroup'),
+                    Ref1: localStorage.getItem('Ref1'),
+                    Ref2: localStorage.getItem('Ref2')
+                },
+                success: function (data) {
+                    window.location.href = '/CandidateEntry/QualificationDetails';
+                },
+                error: function (error) {
+                    console.error('Error:', error);
+                }
+            });
+        }
+
+
+        function LocalStorage() {
+            localStorage.setItem('FirstName', $('input[name="FirstName"]').val());
+            localStorage.setItem('FatherName', $('input[name="FatherName"]').val());
+            localStorage.setItem('MotherName', $('input[name="MotherName"]').val());
+            localStorage.setItem('LastName', $('input[name="LastName"]').val());
+            localStorage.setItem('AdharName', $('input[name="AdharName"]').val());
+            localStorage.setItem('Gender', $('select[name="Gender"]').val());
+            localStorage.setItem('EmergencyContactDetails', $('input[name="EmergencyContactDetails"]').val());
+            localStorage.setItem('BloodGroup', $('select[name="BloodGroup"]').val());
+            localStorage.setItem('Ref1', $('input[name="Ref1"]').val());
+            localStorage.setItem('Ref2', $('input[name="Ref2"]').val());
+        }
+        $(document).ready(function () {
+
+            if (localStorage.getItem('FirstName') !== null) {
+                $('input[name="FirstName"]').val(localStorage.getItem('FirstName'));
+            }
+
+            if (localStorage.getItem('FatherName') !== null) {
+                $('input[name="FatherName"]').val(localStorage.getItem('FatherName'));
+            }
+
+            if (localStorage.getItem('MotherName') !== null) {
+                $('input[name="MotherName"]').val(localStorage.getItem('MotherName'));
+            }
+
+            if (localStorage.getItem('LastName') !== null) {
+                $('input[name="LastName"]').val(localStorage.getItem('LastName'));
+            }
+
+            if (localStorage.getItem('AdharName') !== null) {
+                $('input[name="AdharName"]').val(localStorage.getItem('AdharName'));
+            }
+
+            if (localStorage.getItem('Gender') !== null) {
+                $('select[name="Gender"]').val(localStorage.getItem('Gender'));
+            }
+
+            if (localStorage.getItem('EmergencyContactDetails') !== null) {
+                $('input[name="EmergencyContactDetails"]').val(localStorage.getItem('EmergencyContactDetails'));
+            }
+
+            if (localStorage.getItem('BloodGroup') !== null) {
+                $('select[name="BloodGroup"]').val(localStorage.getItem('BloodGroup'));
+            }
+
+            if (localStorage.getItem('Ref1') !== null) {
+                $('input[name="Ref1"]').val(localStorage.getItem('Ref1'));
+            }
+
+            if (localStorage.getItem('Ref2') !== null) {
+                $('input[name="Ref2"]').val(localStorage.getItem('Ref2'));
+            }
+
+            localStorage.removeItem('FirstName');
+            localStorage.removeItem('FatherName');
+            localStorage.removeItem('MotherName');
+            localStorage.removeItem('LastName');
+            localStorage.removeItem('AdharName');
+            localStorage.removeItem('Gender');
+            localStorage.removeItem('EmergencyContactDetails');
+            localStorage.removeItem('BloodGroup');
+            localStorage.removeItem('Ref1');
+            localStorage.removeItem('Ref2');
+        });
+    </script>
+</body>
+
+</html>

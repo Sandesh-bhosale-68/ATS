@@ -1,0 +1,268 @@
+﻿@using ATS.DatabaseDB;
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model ATS.Models.FunctionalInterview;
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.1</title>
+    <link href="Css/bootstrap.min.css" rel="stylesheet">
+    <script src="Js/bootstrap.bundle.min.js"></script>
+    <script src="Js/bootstrap-table.min.js"></script>
+    <link rel='stylesheet' href='Css/bootstrap-table.min.css'>
+    <script src="Js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="Js/jquery.dataTables.min.js"></script>
+
+    <script src="~/js/bootstrap-table.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <link href="Css/mainStyle.css" rel="stylesheet">
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <link href="~/css/mainStyle.css" rel="stylesheet">
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+</head>
+<body>
+    <div class="container-fluid box">
+        <div class="row col-md-12 header" id="header">
+            <div class="col-sm-2 logospace">
+                <img class="" src="~/Images/Logo.png" />
+            </div>
+            <div class="col-sm-10 headerBtns">
+                <span class="profilePic pullright">
+                    <img src="~/Images/Avatar.png" />
+                </span>
+                <div class="btn-group pullright loggedInBtn">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle loggedIn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu logout">
+                        <a href="#">Logout</a>
+                    </ul>
+                </div>
+
+                <span class="notificationIcon pullright">
+                    <img src="~/Images/icon_notification.png" />
+                </span>
+            </div>
+        </div>
+        <div class="row flex-nowrap content">
+            <div class="col-auto col-md-3 col-xl-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start text-white">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle active ">
+                                <img src="~/Images/icon_home.png" /><span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_dashboard.png" /><span class="ms-1 d-none d-sm-inline">Menu 1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_inbox.png" /><span class="ms-1 d-none d-sm-inline">Menu 2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_products.png" /><span class="ms-1 d-none d-sm-inline">Menu 3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_Invoices.png" /><span class="ms-1 d-none d-sm-inline">Menu 4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_customers.png" /><span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_chat-room.png" /><span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_calendar.png" /><span class="ms-1 d-none d-sm-inline">Menu 7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_help-center.png" /><span class="ms-1 d-none d-sm-inline">Menu 8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_setting.png" /><span class="ms-1 d-none d-sm-inline">Menu 9</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="col functionalInterview">
+                <div class="col-sm-8 content2">
+                    <div class="sectionHeading">
+                        <h4>Functional Interview</h4>
+                    </div>
+                    <div class="col-sm-12 form">
+                        <form id="form1" action="/HrWorkDept/FunctionalInterview" method="post">
+                            @if (ViewBag.AgeAlert != null)
+                            {
+                                <h3>@ViewBag.AgeAlert</h3>
+                            }
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label><span class="required">*</span> required fields</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputInterview">Interview <span class="required"> *</span></label>
+                                        @Html.DropDownList("InterviewStage", (SelectList)ViewBag.InterviewStage, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputSelectDepartment">Select Department <span class="required"> *</span></label>
+                                        @Html.DropDownList("Department", (SelectList)ViewBag.Department, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputSelectInterviewer">Select Interviewer <span class="required"> *</span></label>
+                                        @Html.DropDownList("Interviewer",  Enumerable.Empty<SelectListItem>(), new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputSelectDate">Select Date Time <span class="required"> *</span></label>
+                                      
+                                            <input asp-for="Date" class="form-control datepicker" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                               
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputMeetingLink">Meeting Link  <span class="required"> *</span></label>
+                                        <input asp-for="Meeting" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <br /><br />
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                
+                                        <button type="submit" class="btn btn-primary btn-sm">Arrange </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#Department').change(function () {
+                var selectedValue = $(this).val();
+
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/HrWorkDept/InterviewrSelection',
+                    data: { selectedValue: selectedValue },
+                    success: function (data) {
+                        console.log(data);
+                        var InterviewerDropdown = $('#Interviewer');
+                        InterviewerDropdown.empty(); // Clear existing options
+                        $.each(data, function (index, item) {
+                            InterviewerDropdown.append($('<option>', {
+                                value: item.value.toString(),
+                                text: item.text
+                            }));
+                        });
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+
+
+        function ArrangeInterview() {
+            var InterviewStage = $("#InterviewStage").val();
+            var Department = $("#Department option:selected").text();
+            var Interviewer = $("#Interviewer option:selected").text();
+            var Date = $("#Date").val();
+            var Time = $("#time").val();
+            var MeetingLink = $("#Meeting").val();
+            var CandidateEmail = $("#Email").val();
+
+
+            $.ajax({
+                type: "POST",
+                url: "/HrWorkDept/FunctionalInterview",
+                data: JSON.stringify({
+                    InterviewStage: InterviewStage,
+                    Department: Department,
+                    Interviewer: Interviewer,
+                    Date: Date,
+                    Time: Time,
+                    MeetingLink: MeetingLink,
+                    CandidateEmail: CandidateEmail
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    // Handle success response
+                    console.log(response);
+                },
+                error: function (error) {
+                    // Handle error response
+                    console.error(error);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
+

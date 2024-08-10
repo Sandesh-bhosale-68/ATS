@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ATS
+build_property.RootNamespace = ATS
+build_property.ProjectDir = D:\sm\ATS\ATS\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\sm\ATS\ATS
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/AddCandicateEntry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcQWRkQ2FuZGljYXRlRW50cnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/CandidateOtherData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcQ2FuZGlkYXRlT3RoZXJEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/CandidateOtherDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcQ2FuZGlkYXRlT3RoZXJEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/CurrentAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcQ3VycmVudEFkZHJlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/FillCandidateDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcRmlsbENhbmRpZGF0ZURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/LogIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcTG9nSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/PermanentAddress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcUGVybWFuZW50QWRkcmVzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/PersonalDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcUGVyc29uYWxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/QualificationDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcUXVhbGlmaWNhdGlvbkRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/ThankYou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcVGhhbmtZb3UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/CandidateEntry/WorkExperience.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlRW50cnlcV29ya0V4cGVyaWVuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/HrWorkDept/AssesmentSelection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJXb3JrRGVwdFxBc3Nlc21lbnRTZWxlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/HrWorkDept/AssignInterview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJXb3JrRGVwdFxBc3NpZ25JbnRlcnZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/HrWorkDept/DynamicInterviewStage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJXb3JrRGVwdFxEeW5hbWljSW50ZXJ2aWV3U3RhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/HrWorkDept/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJXb3JrRGVwdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/HrWorkDept/Onbourding.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJXb3JrRGVwdFxPbmJvdXJkaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/HrWorkDept/UploadDocument.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJXb3JrRGVwdFxVcGxvYWREb2N1bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/sm/ATS/ATS/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-7x68zdv4ie

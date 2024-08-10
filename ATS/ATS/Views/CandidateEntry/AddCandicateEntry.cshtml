@@ -1,0 +1,342 @@
+﻿@model ATS.Models.CandidateEntryDetails
+
+
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/mainStyle.css" rel="stylesheet">
+    <script src="~/js/jquery.min.js"></script>
+  
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+ 
+</head>
+<body> 
+    <div class="container-fluid box">
+        <div class="row col-md-12 header" id="header">
+            <div class="col-sm-2 logospace">
+                <img class="" src="Images/Logo.png" />
+            </div>
+            <div class="col-sm-10 headerBtns">
+                <span class="profilePic pullright">
+                    <img src="Images/Avatar.png" />
+                </span>
+                <div class="btn-group pullright loggedInBtn">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle loggedIn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu logout">
+                        <a href="#">Logout</a>
+                    </ul>
+                </div>
+
+                <span class="notificationIcon pullright">
+                    <img src="Images/icon_notification.png" />
+                </span>
+            </div>
+        </div>
+        <div class="row flex-nowrap content">
+            <div class="col-auto col-md-3 col-xl-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start text-white">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle active ">
+                                <img src="Images/icon_home.png" /><span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="Images/icon_dashboard.png" /><span class="ms-1 d-none d-sm-inline">Menu 1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="Images/icon_inbox.png" /><span class="ms-1 d-none d-sm-inline">Menu 2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="Images/icon_products.png" /><span class="ms-1 d-none d-sm-inline">Menu 3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="Images/icon_Invoices.png" /><span class="ms-1 d-none d-sm-inline">Menu 4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="Images/icon_customers.png" /><span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="Images/icon_chat-room.png" /><span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="Images/icon_calendar.png" /><span class="ms-1 d-none d-sm-inline">Menu 7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="Images/icon_help-center.png" /><span class="ms-1 d-none d-sm-inline">Menu 8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="Images/icon_setting.png" /><span class="ms-1 d-none d-sm-inline">Menu 9</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="col  candidateInfo">
+                <div class="col-sm-8 content2">
+                    <div class="sectionHeading">
+                        <h4>Candidate Information</h4>
+                    </div>
+                    <div class="col-sm-12 form">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label><span class="required">*</span> required fields</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputFirstName">First Name <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="FirstName" aria-describedby="" placeholder="Enter First Name">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputLastName">Last Name <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="LastName" aria-describedby="" placeholder="Enter Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputMobileNo">Mobile number <span class="required"> *</span></label>
+                                        <input type="number" class="form-control" asp-for="MobileNumber" aria-describedby="" placeholder="Enter Mobile number">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputDOB">Date of Birth <span class="required"> *</span></label>
+                                        <input asp-for="DOB" class="form-control" type="date" />
+                                        <span id="startDateSelected"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputEmail">Email ID <span class="required"> *</span></label>
+                                        <input type="email" class="form-control" asp-for="EmailID" aria-describedby="" placeholder="Enter Email ID">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputAadhar">Aadhaar number <span class="required"> *</span></label>
+                                        <input type="number" class="form-control" asp-for="AadharCardNumber" aria-describedby="" placeholder="Enter Aadhaar number">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6 otp-section" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="inputEmail">Mobail OTP <span class="required"> *</span></label>
+                                        <input type="number" class="form-control" asp-for="OTP" aria-describedby="" placeholder="Enter Mobial OTM">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 otp-section" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="inputAadhar">Email OTP <span class="required"> *</span></label>
+                                        <input type="number" class="form-control" asp-for="EmailOTP" aria-describedby="" placeholder="Enter Email OTP">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6 otp-section" style="display: none;">
+                                    <div class="form-group">
+                                      
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+
+                                        <button type="button" class="btn btn-primary btn-sm" id="generateOTP">Generate OTP</button>
+                                    </div>
+                                </div>
+                            </div><br /><br />
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                      
+                                      
+                                    </div>
+                                </div>
+                            </div>  
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#generateOTP").click(function () {
+                var firstNameValue = $("#FirstName").val();
+                var mobileNumberValue = $("#MobileNumber").val();
+                var EmailIDrValue = $("#EmailID").val();
+
+                if (!validateInput()) {
+                    return;
+                }
+
+                $.ajax({
+                    url: "/CandidateEntry/GenerateOTPMethod",
+                    type: "POST",
+                    data: {
+                        firstName: firstNameValue,
+                        mobileNumber: mobileNumberValue,
+                        EmailIDrValue: EmailIDrValue
+                    },
+                    success: function (result) {
+                        console.log(result);
+
+
+                        if (result && result.status) {
+                            if (result.status.toLowerCase() === "success") {
+                                // Your code for success here
+                                $(".otp-section").show();
+                                $("#generateOTP").text("Resend OTP");
+                                alert(result.message);
+                            } else if (result.status.toLowerCase() === "masteridpresent") {
+
+                                alert("MasterID is already present: " + result.message);
+                            } else {
+                                // Your code for other cases here
+                                var errorMessage = result && result.message ? result.message : 'Unknown error';
+                                alert("Error or OTP generation skipped: " + errorMessage);
+                            }
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error:", error);
+                    }
+                });
+            });
+        });
+
+
+        function validateInput() {
+            var firstNameValue = $("#FirstName").val();
+            var LastNameValue = $("#LastName").val();
+            var DOBValue = $("#DOB").val();
+            var MobileNumberValue = $("#MobileNumber").val();
+            var AadharCardNumberValue = $("#AadharCardNumber").val();
+            var EmailIDrValue = $("#EmailID").val();
+
+
+            if (MobileNumberValue.length !== 10 || isNaN(MobileNumberValue)) {
+                alert("Please enter a valid 10-digit Mobile Number.");
+                return false;
+            }
+
+
+            if (AadharCardNumberValue.length !== 12 || isNaN(AadharCardNumberValue)) {
+                alert("Please enter a valid 12-digit Aadhar Card Number.");
+                return false;
+            }
+
+
+            if (!firstNameValue || !LastNameValue || !DOBValue || !EmailIDrValue) {
+                alert("All fields are required.");
+                return false;
+            }
+
+            var currentDate = new Date();
+            var enteredDate = new Date(DOBValue);
+            var eighteenYearsAgo = new Date(currentDate.getFullYear() - 18, currentDate.getMonth(), currentDate.getDate());
+
+            if (isNaN(enteredDate) || enteredDate >= currentDate || enteredDate > eighteenYearsAgo) {
+                alert("Please enter a valid Date of Birth that is at least 18 years ago.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#ajaxButton').click(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("GenrateOTP", "Home")',
+                    dataType: 'json',
+                    success: function (result) {
+
+                        console.log(result);
+                    },
+                    error: function (error) {
+
+                        console.error(error);
+                    }
+                });
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
+
+
+

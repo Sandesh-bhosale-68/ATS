@@ -1,0 +1,452 @@
+@font-face {
+    font-family: mainFont;
+    src: url(../Fonts/Lato-Regular.ttf);
+  }
+  
+
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;     
+    font-family: mainFont;
+    font-size:14px;
+}
+
+.container-fluid{
+  padding: 0px;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.required{
+  color: red;
+}
+
+.row{
+  --bs-gutter-x: 0;
+}
+
+.loginImg{
+  max-width: 100%;
+  display: inline-block;
+}
+
+.loginLogo{
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+}
+
+.loginlogoimg{
+  max-width: 100%;
+}
+
+.center{
+  margin-top: 8%;
+}
+
+.centerContent{
+  margin: 10px auto;
+}
+
+form .row{
+  margin:20px 0px;
+}
+
+.pullright, .btn-pullright{
+  float: right;
+}
+
+.btn-primary{
+  width: 45%;
+  background-color: #E94578;
+  color: #FFFFFF;
+  margin: 0px 10px 0px 0px;
+  border: 1px solid #E94578;
+  min-width: 75px;
+}
+
+.btn-primary:hover{
+  background-color: #E94578;
+  color: #FFFFFF;
+  border: 1px solid #E94578;
+}
+
+.btn-secondary{
+  width: 45%;
+  border: 1px solid #707070;
+  background-color: #FFFFFF;
+  color: #000000;
+  margin: 0px 0px 10px 0px;
+  min-width: 100px;
+}
+
+.btn-secondary:hover{
+  border: 1px solid #707070;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.btn-previous{
+  text-align: left;
+  padding-left: 5px 15px 5px 15px;  
+}
+
+.btn-previous img{
+  margin-bottom:3px;
+}
+
+.btn-previous label{
+  float: right;
+}
+
+.btn-next{
+  text-align: left;
+  padding-left:5px 15px 5px 15px;
+  vertical-align: middle;
+}
+
+.btn-next img{
+  float: right;
+  vertical-align: middle;
+  margin-top:3px;
+}
+
+.btn-Add{
+  width: 100%;
+  text-align: center;
+  background-color: #5968A8;
+  border:0px;
+}
+
+.pagination .page-item{
+  margin-right:5px;
+  border: 0px;
+  border-radius: 2px;
+}
+
+.page-item.active, .active>.page-link, .page-link.active{
+  background-color: #E94578;
+  border: 0px !important;
+  border-radius: 5px !important;
+}
+
+.page-item .page-link{
+  border-radius: 5px !important;
+}
+
+.page-list .btn-group .btn-secondary{
+  width:auto !important;
+}
+
+.underline{
+  border-bottom: 1px solid #E2E2E2 ;
+}
+
+.box {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.box .row.content {
+  flex: 1 1 auto;
+}
+
+
+.header{
+  height: 80px;
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header img{
+  max-height: 75px;
+  padding: 5px;
+  margin: auto 10px;
+  vertical-align: middle;
+}
+
+.headerBtns{
+  margin: auto 0px;
+  padding: 5px;
+  vertical-align: middle;
+  float: right;
+}
+
+.profilePic{
+  border-radius: 50%;
+  padding: 0px;
+  margin: auto 5px;
+}
+
+.loggedInBtn{
+  margin-top: 12px;
+}
+
+.loggedInBtn:focus, .loggedInBtn.show{
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.loggedIn{
+  border: 0px;
+}
+
+.loggedIn:hover{
+  border: 0px;
+}
+
+.loggedIn.show, .loggedIn:focus{
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.loggedInBtn .btn-secondary {
+  color: #000000 !important;
+  background-color: #FFFFFF !important;
+}
+
+.logout{
+  border: 0px;
+  box-shadow: #707070 2px 2px 5px;
+  padding: 5px;
+  border-radius: 0px; 
+  font-size: 14px;
+}
+
+.notificationIcon{
+  margin: 12px 10px auto 10px;
+  border-right: 1px solid #EBEBF2;
+}
+
+.leftsideMenu, .bg-dark{
+  background: #43425D !important;
+}
+
+.nav-item{
+  background-color: transparent;
+  color: #FFFFFF;
+  border-radius: 0px;
+  width: 100%;
+}
+
+.nav-item img {
+  margin-right: 10px;
+}
+
+.nav, .nav-link{
+  color: #FFFFFF !important ;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.nav-link{
+  padding: 15px 20px;
+}
+
+.nav-pills{
+  width:100%;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link, .nav-link:hover, .nav-link:focus{
+  background-color: rgba(0,0,0,0.1);
+  color: #FFFFFF;
+  border-radius: 0px;
+  border-left: 4px solid #5968A8;
+  padding-left: 16px;
+}
+
+.content2{
+  padding: 20px;
+  margin-left: 30px;
+}
+
+.candidateInfo{
+  background-image: url(../Images/candidate_info1.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.fillCandidate{
+  background-image: url(../Images/fill_candidate_details.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.uploadDocs{
+  background-image: url(../Images/upload_documents.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.perDetails {
+  background-image: url(../Images/personal_details.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.qualificationDetails {
+  background-image: url(../Images/qualification_details.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.workExperience {
+  background-image: url(../Images/work_experience1.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.currentAddress{
+  background-image: url(../Images/current_address.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.permanentAddress{
+  background-image: url(../Images/permanent_address.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.otherInformation{
+  background-image: url(../Images/other_information.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.functionalInterview{
+  background-image: url(../Images/arrange_interview01.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.functionalInterview2{
+  background-image: url(../Images/arrange_interview02.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.sectionHeading{
+  margin-top: 20px;
+}
+
+.form{
+  background-color: #FFFFFF;
+  border-radius: 7px;
+  padding: 10px;
+}
+
+.form .row{
+  margin: 0px 0px 15px 0px;
+}
+
+.form .row div{
+  padding: 0px 10px;
+}
+
+.tableContent{
+  display: inline-flex;
+  background-color: #F0F0F7;
+}
+
+.table{
+  font-size: 12px;
+}
+
+.table>thead, .table-dark{
+  background-color: #5968A8;
+  --bs-table-bg: #5968A8;
+  border: 0px !important;
+}
+
+tbody, td, tfoot, th, thead, tr{
+  border: 0px;
+}
+
+.table .btn-secondary{
+  padding: 3px 10px;
+  font-size: 12px;
+  width: auto;
+}
+
+.onboarding .form{
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sections{
+  width: 45%;
+  margin-right:auto;
+  float: none;
+}
+
+.onboarding .sections2{
+  width: 45%;
+  margin-right: 0px;
+}
+
+@media only screen and (max-width: 600px)  {
+  .btn-pullright{
+    float: left;
+  }
+
+  .headerBtns{
+    width: 65%;
+    height: 120px;
+  }
+
+  .logospace{
+    width:30%;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 1280px){
+  .radio4Btns{
+    width: 50%;
+  }
+}

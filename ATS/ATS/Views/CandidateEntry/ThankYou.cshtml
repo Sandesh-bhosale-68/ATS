@@ -1,0 +1,182 @@
+﻿@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/mainStyle.css" rel="stylesheet">
+
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <link href="~/css/mainStyle.css" rel="stylesheet">
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <style>
+        body {
+            background-image: url('/Images/other_information.png');
+          
+
+            background-repeat: no-repeat;
+            background-position-x: right;
+        }
+
+        .btn-prime,
+        .btn-prime:hover {
+            background-color: #323A8A;
+            border: none;
+            color: #FFFFFF;
+        }
+
+        /* Add your custom CSS here */
+        .custom-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Add shadow effect */
+            border-radius: 8px; /* Add rounded corners */
+            margin: 20px;
+          
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .custom-card-body {
+            border: 1px solid #ddd;
+            padding: 40px;
+            margin: 10px;
+         /* Change to your desired background color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+            border-radius: 8px; /* Add rounded corners */
+            margin: 10px;
+            align-items: center;
+            background-image: url('/Images/OIP-removebg-preview_1.png');
+            height: 400px; 
+            
+           
+        }
+
+        .custom-card-body {
+            border: 1px solid #ddd;
+            padding: 40px;
+            margin: 10px;
+            background-color: #F3F3F3;
+            align-items: center;
+            background-image: url('/Images/OIP-removebg-preview_1.png');
+            background-size: cover; /* Make the background image cover the entire container */
+            background-position: center center; /* Center the background image */
+            background-repeat: no-repeat;
+            /* Change to your desired background color */
+        }
+
+        .form-label {
+            margin-bottom: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 12px;
+        }
+
+        .form-control {
+            margin-bottom: 10px;
+            border: solid 0.5px;
+        }
+
+        #btn_GenerateOTP,
+        #btn_ResendOTP {
+            margin-top: 10px;
+        }
+
+        .logo-div {
+            text-align: center;
+        }
+
+        .file-input {
+            margin-bottom: 10px; /* Adjust the value as needed */
+        }
+
+        .upload-button {
+            margin-bottom: 10px; /* Adjust the value as needed */
+        }
+
+        .card-heading {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #sm {
+            margin: auto;
+        }
+
+            /* Adjust styles for the first column */
+            #sm .col-sm-1 {
+                text-align: left;
+            }
+
+            /* Adjust styles for the second column */
+            #sm .col-sm-10 {
+                text-align: right;
+            }
+
+            /* Adjust styles for the third column */
+            #sm .col-sm-1.text-right {
+                text-align: right;
+            }
+
+        .small-image {
+            width: 10px;
+            height: 10px;
+        }
+
+        .virtual-grid {
+            margin-top: 20px;
+        }
+
+        .grid-row {
+            display: flex;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+
+        .header {
+            font-weight: lighter;
+            background-color: #f5f5f5;
+        }
+
+        .grid-cell {
+            flex: 1;
+            padding: 8px;
+        }
+
+            .grid-cell:hover {
+                background-color: #e0e0e0;
+                cursor: pointer;
+            }
+    </style>
+    <title>Bootstrap Card Body with Custom CSS</title>
+</head>
+<body>
+
+    <form id="form1" method="post">
+        <div class="container mt-4">
+          
+            <div style="text-align:left">
+                <img src="/Images/OIP-removebg-preview_1.png"  style="width:650px;height:600px;"/>
+            </div>
+
+
+
+        </div>
+
+
+    </form>
+
+</body>
+</html>
+
+

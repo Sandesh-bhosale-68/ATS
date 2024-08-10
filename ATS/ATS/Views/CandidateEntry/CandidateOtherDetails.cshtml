@@ -1,0 +1,523 @@
+﻿@model ATS.Models.OtherCandidateDetails
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/mainStyle.css" rel="stylesheet">
+
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <link href="/css/mainStyle.css" rel="stylesheet">
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+  
+    <style>
+        .virtual-grid {
+            margin-top: 20px;
+        }
+
+        .grid-row {
+            display: flex;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+
+        .header {
+            font-weight: lighter;
+            background-color: #f5f5f5;
+            height:50px;
+        }
+
+        .grid-cell {
+            flex: 1;
+            padding: 8px;
+        }
+
+            .grid-cell:hover {
+                background-color: #e0e0e0;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-fluid box">
+        <div class="row col-md-12 header" id="header">
+            <div class="col-sm-2 logospace">
+                <img class="" src="~/Images/Logo.png" />
+            </div>
+            <div class="col-sm-10 headerBtns">
+                <span class="profilePic pullright">
+                    <img src="~/Images/Avatar.png" />
+                </span>
+                <div class="btn-group pullright loggedInBtn">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle loggedIn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu logout">
+                        <a href="#">Logout</a>
+                    </ul>
+                </div>
+
+                <span class="notificationIcon pullright">
+                    <img src="~/Images/icon_notification.png" />
+                </span>
+            </div>
+        </div>
+        <div class="row flex-nowrap content">
+            <div class="col-auto col-md-3 col-xl-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start text-white">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle active ">
+                                <img src="~/Images/icon_home.png" /><span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_dashboard.png" /><span class="ms-1 d-none d-sm-inline">Menu 1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_inbox.png" /><span class="ms-1 d-none d-sm-inline">Menu 2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_products.png" /><span class="ms-1 d-none d-sm-inline">Menu 3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_Invoices.png" /><span class="ms-1 d-none d-sm-inline">Menu 4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_customers.png" /><span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_chat-room.png" /><span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_calendar.png" /><span class="ms-1 d-none d-sm-inline">Menu 7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_help-center.png" /><span class="ms-1 d-none d-sm-inline">Menu 8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_setting.png" /><span class="ms-1 d-none d-sm-inline">Menu 9</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="col otherInformation">
+                <div class="col-sm-8 content2">
+                    <div class="sectionHeading">
+                        <h4>Other Details</h4>
+                    </div>
+                    <div class="col-sm-12 form">
+                        <form id="form1">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label><span class="required">*</span> required fields</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputPassportNumber">Passport Number <span class="required"> </span></label>
+                                        <input type="text" class="form-control" asp-for="Passport" aria-describedby="" placeholder="Enter Passport Number">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputMaritalStatus">Marital Status <span class="required"> *</span></label>
+                                        <select asp-for="MaritalStatus" class="form-control">
+                                            <option value="">Select Status</option>
+                                            <option value="Married">Married</option>
+                                            <option value="UnMarried">Un-Married</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputPANCard">PAN Card <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="PanCard" aria-describedby="" placeholder="Enter PAN Card">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputUAN">UAN <span class="required"> </span></label>
+                                        <input type="text" class="form-control" asp-for="UAN" aria-describedby="" placeholder="Enter UAN">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="inputState">Differently Abled <span class="required"> *</span></label>
+
+
+                                        <div class="form-check form-check-inline" style="padding-left: 80px;">
+                                            <input asp-for="IsDifferentlyAbled" class="form-check-input" type="radio" id="radioNo" value="false" />
+                                            <label class="form-check-label" for="radioNo">No</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input asp-for="IsDifferentlyAbled" class="form-check-input" type="radio" id="radioYes" value="true" />
+                                            <label class="form-check-label" for="radioYes">Yes</label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <select asp-for="SelectedLanguage" class="form-control" id="languageDropdown">
+                                        <option value="">Select Language</option>
+                                        <option value="Marathi">Marathi</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="English">English</option>
+                                        <option value="Tamil">Tamil</option>
+                                        <option value="Hindi">Hindi</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-sm-6 otp-section" style="display: none; margin-top: 10px;" id="languageOptions">
+                                    <div>
+                                        <input asp-for="Read" id="chkRead" type="checkbox" style="padding-left: 10px" />
+                                        <label for="chkRead">Read</label>
+
+                                        <input asp-for="Write" id="chkWrite" type="checkbox" style="padding-left: 10px" />
+                                        <label for="chkWrite">Write</label>
+
+                                        <input asp-for="Speak" id="chkSpeak" type="checkbox" style="padding-left: 10px" />
+                                        <label for="chkSpeak">Speak</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3 otp-section" id="addButtonSection">
+                                    <button id="addLangiage" class="btn btn-primary btn-sm" onclick="addLanguage()">Add</button>
+                                </div>
+                            </div>
+
+                            <div id="virtualGrid" class="virtual-grid">
+                                <div class="grid-row header">
+                                    <div class="grid-cell">Selected Language</div>
+                                    <div class="grid-cell">Read</div>
+                                    <div class="grid-cell">Write</div>
+                                    <div class="grid-cell">Speak</div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-previous"><img src="~/Images/icon_previous.png" onclick="handlePrevImageClick()" /><label> Previous</label></button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">&nbsp;</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+   
+
+       
+  
+    <script>
+        function RemoveALlLocalStorage() {
+            localStorage.removeItem('languages');
+            localStorage.removeItem('NumberOfEx');
+            localStorage.removeItem('dllWorkArea');
+            localStorage.removeItem('ORGName');
+            localStorage.removeItem('Designation');
+            localStorage.removeItem('CTC');
+            localStorage.removeItem('LastORGJED');
+            localStorage.removeItem('LWD');
+            localStorage.removeItem('HouseNumber');
+            localStorage.removeItem('StreetName');
+            localStorage.removeItem('State');
+            localStorage.removeItem('City');
+            localStorage.removeItem('PinCode');
+            localStorage.removeItem('Area');
+            localStorage.removeItem('LandMark');
+            localStorage.removeItem('HighEducation');
+            localStorage.removeItem('HighPassingYear');
+            localStorage.removeItem('HSC');
+            localStorage.removeItem('Diploma');
+            localStorage.removeItem('Graduate');
+            localStorage.removeItem('PostGraduate');
+            localStorage.removeItem('SpecialCertification');
+            localStorage.removeItem('CertificationOther');
+            localStorage.removeItem('OtherCertificatePassingYear');
+            localStorage.removeItem('PercentageOther');
+            localStorage.removeItem('FirstName');
+            localStorage.removeItem('FatherName');
+            localStorage.removeItem('MotherName');
+            localStorage.removeItem('LastName');
+            localStorage.removeItem('AdharName');
+            localStorage.removeItem('Gender');
+            localStorage.removeItem('EmergencyContactDetails');
+            localStorage.removeItem('BloodGroup');
+            localStorage.removeItem('Ref1');
+            localStorage.removeItem('Ref2');
+            sessionStorage.removeItem('Disposition');
+            sessionStorage.removeItem('SubDisposition');
+            sessionStorage.removeItem('Location');
+            sessionStorage.removeItem('Position');
+        }
+        function handlePrevImageClick() {
+
+            var url = '@Url.Action("PermanentAddress", "CandidateEntry")';
+            window.location.href = url;
+        }
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#languageDropdown').change(function () {
+                var selectedLanguage = $(this).val();
+                showHideLanguageOptions(selectedLanguage);
+            });
+
+            function showHideLanguageOptions(selectedLanguage) {
+                var languageOptionsDiv = $('#languageOptions');
+                var addButtonDiv = $('#addButtonSection');
+
+                languageOptionsDiv.show();
+                addButtonDiv.show();
+
+            }
+        });
+
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        // Function to handle form submission using Ajax
+        function submitForm() {
+          
+            var MaritalStatusValue = $("#MaritalStatus").val();
+            if (!MaritalStatusValue) {
+                alert("Marital Status is required.");
+                return;
+            }
+           
+            var storedLanguages = JSON.parse(localStorage.getItem("languages")) || [];
+
+            var formData = {
+                MaritalStatus: $("#MaritalStatus").val(),
+                PanCard: $("#PanCard").val(),
+                Passport: $("#Passport").val(),
+                UAN: $("#UAN").val(),
+                IsDifferentlyAbled: $("input[name='IsDifferentlyAbled']:checked").val() === "true",
+                SelectedLanguage: $("#SelectedLanguage").val(),
+                VirtualGridValues: storedLanguages
+            };
+
+            
+            $.ajax({
+                type: "POST",
+                url: "/CandidateEntry/OtherCandidateDetailsInfo",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (result) {
+                    RemoveALlLocalStorage();
+                    var url = '@Url.Action("ThankYou", "CandidateEntry")';
+                    window.location.href = url;
+                 
+                },
+                error: function (error) {
+                    // Handle error
+                    console.error(error);
+                }
+            });
+
+            // Prevent the default form submission behavior
+            event.preventDefault();
+        }
+
+        // Ensure the DOM is ready before attaching the click event
+        $(document).ready(function () {
+            $("#submitBtn").click(function () {
+                submitForm();
+            });
+        });
+    </script>
+
+
+    <script>
+       
+        $(document).ready(function () {
+            // Your existing code for showing/hiding language options based on dropdown change
+            $('#languageDropdown').change(function () {
+                var selectedLanguage = $(this).val();
+                showHideLanguageOptions(selectedLanguage);
+            });
+
+            function showHideLanguageOptions(selectedLanguage) {
+                var languageOptionsDiv = $('#languageOptions');
+                var addButtonDiv = $('#addButtonSection');
+
+                languageOptionsDiv.show();
+                addButtonDiv.show();
+            }
+
+            // Your existing code for populating virtual grid with stored languages
+            var storedLanguages = JSON.parse(localStorage.getItem("languages")) || [];
+            console.log(storedLanguages);
+            if (storedLanguages.length > 0) {
+                storedLanguages.forEach(function (languageDetail) {
+                    var newRow = $("<div class='grid-row'>" +
+                        "<div class='grid-cell'>" + languageDetail.Language + "</div>" +
+                        "<div class='grid-cell'>" + (languageDetail.Read ? "Yes" : "No") + "</div>" +
+                        "<div class='grid-cell'>" + (languageDetail.Write ? "Yes" : "No") + "</div>" +
+                        "<div class='grid-cell'>" + (languageDetail.Speak ? "Yes" : "No") + "</div>" +
+                        "</div>");
+
+                    $("#virtualGrid").append(newRow);
+                });
+            }
+            function submitFormqqq() {
+                alert("sandesh1");
+                var MaritalStatusValue = $("#MaritalStatus").val();
+                if (!MaritalStatusValue) {
+                    alert("Marital Status is required.");
+                    return;
+                }
+                alert("sandesh2");
+                var storedLanguages = JSON.parse(localStorage.getItem("languages")) || [];
+
+                var formData = {
+                    MaritalStatus: $("#MaritalStatus").val(),
+                    PanCard: $("#PanCard").val(),
+                    Passport: $("#Passport").val(),
+                    UAN: $("#UAN").val(),
+                    IsDifferentlyAbled: $("input[name='IsDifferentlyAbled']:checked").val() === "true",
+                    SelectedLanguage: $("#SelectedLanguage").val(),
+                    VirtualGridValues: storedLanguages
+                };
+
+                alert("sandesh3");
+                $.ajax({
+                    type: "POST",
+                    url: "/CandidateEntry/OtherCandidateDetailsInfo",
+                    data: JSON.stringify(formData),
+                    contentType: "application/json",
+                    success: function (result) {
+                        var url = '@Url.Action("ThankYou", "CandidateEntry")';
+                        window.location.href = url;
+                    },
+                    error: function (error) {
+                        // Handle error
+                        console.error(error);
+                    }
+                });
+
+                // Prevent the default form submission behavior
+                event.preventDefault();
+            }
+
+            // Attach the SubmitAllValue function to the form submission event
+         
+
+
+            // Your existing code for adding a new language
+            function addLanguage(event) {
+                var selectedLanguage = $("#languageDropdown").val();
+                var read = $("#chkRead").prop("checked");
+                var write = $("#chkWrite").prop("checked");
+                var speak = $("#chkSpeak").prop("checked");
+
+                var newRow = $("<div class='grid-row'>" +
+                    "<div class='grid-cell'>" + selectedLanguage + "</div>" +
+                    "<div class='grid-cell'>" + (read ? "Yes" : "No") + "</div>" +
+                    "<div class='grid-cell'>" + (write ? "Yes" : "No") + "</div>" +
+                    "<div class='grid-cell'>" + (speak ? "Yes" : "No") + "</div>" +
+                    "</div>");
+
+                $("#virtualGrid").append(newRow);
+                var storedLanguages = JSON.parse(localStorage.getItem("languages")) || [];
+                storedLanguages.push({
+                    Language: selectedLanguage,
+                    Read: read,
+                    Write: write,
+                    Speak: speak
+                });
+                localStorage.setItem("languages", JSON.stringify(storedLanguages));
+
+                // Clear the form after adding the language
+                $("#languageDropdown").val("");
+                $("#chkRead, #chkWrite, #chkSpeak").prop("checked", false);
+
+                // Prevent the default form submission behavior
+                event.preventDefault();
+            }
+
+
+            $('#addLangiage').on('click', addLanguage);
+        });
+    </script>
+</body>
+
+</html>
+
+

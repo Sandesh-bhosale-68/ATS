@@ -1,0 +1,551 @@
+﻿@using ATS.DatabaseDB;
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model ATS.Models.OnboardingModel;
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.1</title>
+    <link href="Css/bootstrap.min.css" rel="stylesheet">
+    <script src="Js/bootstrap.bundle.min.js"></script>
+    <script src="Js/bootstrap-table.min.js"></script>
+    <link rel='stylesheet' href='Css/bootstrap-table.min.css'>
+    <script src="Js/jquery.min.js"></script>
+
+    <script type="text/javascript" src="Js/jquery.dataTables.min.js"></script>
+
+    <script src="~/js/bootstrap-table.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <link href="Css/mainStyle.css" rel="stylesheet">
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <link href="~/css/mainStyle.css" rel="stylesheet">
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <style>
+        .form-label{
+            margin-right:7px;
+            margin-left: 10px;
+            margin-bottom:7px;
+        
+      
+        }
+        .form-control{
+            margin-bottom: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid box">
+        <div class="row col-md-12 header" id="header">
+            <div class="col-sm-2 logospace">
+                <img class="" src="~/Images/Logo.png" />
+            </div>
+            <div class="col-sm-10 headerBtns">
+                <span class="profilePic pullright">
+                    <img src="~/Images/Avatar.png" />
+                </span>
+                <div class="btn-group pullright loggedInBtn">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle loggedIn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu logout">
+                        <a href="#">Logout</a>
+                    </ul>
+                </div>
+
+                <span class="notificationIcon pullright">
+                    <img src="~/Images/icon_notification.png" />
+                </span>
+            </div>
+        </div>
+        <div class="row flex-nowrap content">
+            <div class="col-auto col-md-3 col-xl-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start text-white">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle active ">
+                                <img src="~/Images/icon_home.png" /><span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_dashboard.png" /><span class="ms-1 d-none d-sm-inline">Menu 1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_inbox.png" /><span class="ms-1 d-none d-sm-inline">Menu 2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_products.png" /><span class="ms-1 d-none d-sm-inline">Menu 3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_Invoices.png" /><span class="ms-1 d-none d-sm-inline">Menu 4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_customers.png" /><span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_chat-room.png" /><span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_calendar.png" /><span class="ms-1 d-none d-sm-inline">Menu 7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_help-center.png" /><span class="ms-1 d-none d-sm-inline">Menu 8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_setting.png" /><span class="ms-1 d-none d-sm-inline">Menu 9</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="col tableContent">
+               
+                <div class="col-xs-12 col-sm-11 content2 onboarding">
+                    <div class="sectionHeading">
+                      
+                    </div>
+                    <form action="/HrWorkDept/Onbourding" method="post">
+                        <div>
+                            <div class="row" style="margin-bottom:20px;">
+                                <div class="col-md-3">
+                                    <h4>Onboarding</h4>
+                                    </div>
+                                <div class="col-sm-2">
+                                    <!-- Content for the first column -->
+                                </div>
+                                <div class="col-sm-1">
+                                    <!-- Content for the second column -->
+                                </div>
+                                <div class="col-sm-2">
+                                    <!-- Empty column to push buttons to the right -->
+                                </div>
+                                <div class="col-sm-1" style="margin-right: 15px;">
+                                    <div class="float-right">
+                                        <button type="button" onclick="toggleReadOnly(false)" class="btn btn-primary btn-sm">Edit</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-1" style="margin-right:15px;">
+                                    <div class="float-right">
+                                        <button type="button" onclick="DocumentUplode()" class="btn btn-primary btn-sm">Document</button>
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-1">
+                                    <div class="float-right">
+                                        <button type="submit" onclick="toggleReadOnly(true)" class="btn btn-primary btn-sm">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row">
+
+                        <div class="col-sm-3">
+                            <label class="form-label">First Name:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="FirstName" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Father Name:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="FatherName" class="form-control" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-label">Mother Name:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="MotherName" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Last Name:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="LastName" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Name as per Adhar:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="AdharName" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Gender:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="Gender" class="form-control" />
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-label">Aadhar Card Number:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="AdharNumber" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Email</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="Email" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Education details:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="EducationDetails" class="form-control" />
+
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Post Graduate:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="PostGraduate" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Graduate</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="Graduate" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Diploma</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="Diploma" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">HSC</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="HSC" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">WorkExperience</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="WorkExperience" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">LastOrganization</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="LastOrganization" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">LastOrganizationJoinDate</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="LastOrganizationJoinDate" class="form-control" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-label">Last Organization LWD:</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="LastOrganizationLWD" class="form-control" />
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-label">LastOrganizationCTC</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="LastOrganizationCTC" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Designation</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="DesignationPRV" class="form-control" />
+                        </div>
+
+
+
+                        <div class="col-sm-3">
+                            <label class="form-label">EmergencyContactDetails</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="EmergencyContactDetails" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">BloodGroup</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="BloodGroup" class="form-control" />
+
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Ref1</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="Ref1" class="form-control" />
+                        </div>
+
+                        <div class="col-sm-3">
+                            <label class="form-label">Ref2</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input ReadOnly="true" asp-for="Ref2" class="form-control" />
+                        </div>
+
+                     
+                        <div class="sectionHeading">
+                            <h4>  Designation Details</h4>
+                        </div>
+                        <br /><br /><br />
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label class="form-label">*Select Department:</label>
+                            </div>
+                            <div class="col-sm-3">
+                                @Html.DropDownList("Department", (SelectList)ViewBag.Department, new { @class = "form-control" })
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="form-label">*Designation::</label>
+                            </div>
+                            <div class="col-sm-3">
+                                @Html.DropDownList("Designation", Enumerable.Empty<SelectListItem>(), new { @class = "form-control", id = "DesignationDropdown" })
+
+
+                            </div>
+
+                            <div class="col-sm-3">
+                                <label class="form-label">*COC Acknowledgement:</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" asp-for="COCAcknowledgement" value="Agree" checked />
+                                    <label class="form-check-label">
+                                        Agree
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" asp-for="COCAcknowledgement" value="Disagree" />
+                                    <label class="form-check-label">
+                                        Disagree
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <label class="form-label">*NDA Acknowledgement:</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" asp-for="NDAAcknowledgement" value="Agree" checked />
+                                    <label class="form-check-label">
+                                        Agree
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" asp-for="NDAAcknowledgement" value="Disagree" />
+                                    <label class="form-check-label">
+                                        Disagree
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3">
+                                <label class="form-label">*Salary structure:</label>
+                            </div>
+                            <div class="col-sm-3">
+                                @Html.DropDownList("Salary", (SelectList)ViewBag.Salary, new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-sm-3 otp-sectionNAPS" style="display:none">
+                                <label class="form-label">*NAPS:</label>
+                            </div>
+                            <div class="col-sm-3 otp-sectionNAPS" style="display:none">
+                                @Html.DropDownList("NAPS", (SelectList)ViewBag.NAPS, new { @class = "form-control" })
+                            </div>
+                            <div class="col-sm-3 otp-sectionNATS" style="display:none">
+                                <label class="form-label">*NATS:</label>
+                            </div>
+                            <div class="col-sm-3 otp-sectionNATS" style="display:none">
+                                @Html.DropDownList("NATS", (SelectList)ViewBag.NATS, new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-sm-3 otp-sectionCTC" style="display:none">
+                                <label class="form-label">*CTC:</label>
+                            </div>
+                            <div class="col-sm-3 otp-sectionCTC" style="display:none">
+                                @Html.DropDownList("CTC", (SelectList)ViewBag.NAPS, new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-sm-3">
+                            </div>
+
+                        </div>
+                      
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                        <button type="button" class="btn btn-primary">Send Offer</button>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <button type="button" id="Dawonloeoffer" style="display:none" class="btn btn-primary">Dawonlode</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleReadOnly(isReadOnly) {
+            var inputs = document.getElementsByTagName("input");
+            var allInputsAreReadOnly = true;
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].readOnly = isReadOnly;
+                if (!isReadOnly && !inputs[i].readOnly) {
+                    // If at least one input is not set to read-only, update the flag
+                    allInputsAreReadOnly = false;
+                }
+            }
+            if (allInputsAreReadOnly && isReadOnly) {
+                // All inputs were already in read-only state
+                console.log("All inputs are already in read-only state.");
+            } else {
+               
+               
+            }
+        }
+
+
+        function DocumentUplode()
+        {
+    
+            var url = '@Url.Action("UploadDocument", "HrWorkDept")';
+            window.location.href = url;
+        }
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#Department').change(function () {
+                var selectedValue = $(this).val();
+           
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/HrWorkDept/HandleDesignation',
+                    data: { selectedValue: selectedValue },
+                    success: function (data) {
+                        console.log(data);
+                        var DesignationDropdown = $('#DesignationDropdown');
+                        DesignationDropdown.empty(); // Clear existing options
+                        $.each(data, function (index, item) {
+                            DesignationDropdown.append($('<option>', {
+                                value: item.value.toString(),
+                                text: item.text
+                            }));
+                        });
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Event handler for the "Salary" dropdown
+            $("#Salary").change(function () {
+
+                $(".otp-sectionNAPS, .otp-sectionNATS, .otp-sectionCTC").hide();
+
+
+                var selectedSalary = $(this).val();
+
+                // Show the corresponding section based on the selected value
+                if (selectedSalary === "NAPS") {
+                    $(".otp-sectionNAPS").show();
+                } else if (selectedSalary === "NATS") {
+                    $(".otp-sectionNATS").show();
+                } else if (selectedSalary === "CTC") {
+                    $(".otp-sectionCTC").show();
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+         
+            $("input[name='COCAcknowledgement'], input[name='NDAAcknowledgement']").change(function () {
+                // Check the values of both radio buttons
+                var cocValue = $("input[name='COCAcknowledgement']:checked").val();
+                var ndaValue = $("input[name='NDAAcknowledgement']:checked").val();
+
+                // Show or hide the button based on the conditions
+                if (cocValue === "Agree" && ndaValue === "Agree") {
+                    $("#Dawonloeoffer").show();
+                } else {
+                    $("#yourButtonId").hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+

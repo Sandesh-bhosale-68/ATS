@@ -1,0 +1,450 @@
+﻿@{
+    ViewData["Title"] = "QualificationDetails";
+}
+
+@model ATS.Models.QualificationDetailsModel
+@using Microsoft.AspNetCore.Mvc
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>1.1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="css/mainStyle.css" rel="stylesheet">
+
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <link href="~/css/mainStyle.css" rel="stylesheet">
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+ 
+</head>
+<body>
+    <div class="container-fluid box">
+        <div class="row col-md-12 header" id="header">
+            <div class="col-sm-2 logospace">
+                <img class="" src="~/Images/Logo.png" />
+            </div>
+            <div class="col-sm-10 headerBtns">
+                <span class="profilePic pullright">
+                    <img src="~/Images/Avatar.png" />
+                </span>
+                <div class="btn-group pullright loggedInBtn">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle loggedIn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        John Doe
+                    </button>
+                    <ul class="dropdown-menu logout">
+                        <a href="#">Logout</a>
+                    </ul>
+                </div>
+
+                <span class="notificationIcon pullright">
+                    <img src="~/Images/icon_notification.png" />
+                </span>
+            </div>
+        </div>
+        <div class="row flex-nowrap content">
+            <div class="col-auto col-md-3 col-xl-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start text-white">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle active ">
+                                <img src="~/Images/icon_home.png" /><span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_dashboard.png" /><span class="ms-1 d-none d-sm-inline">Menu 1</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_inbox.png" /><span class="ms-1 d-none d-sm-inline">Menu 2</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link  align-middle">
+                                <img src="~/Images/icon_products.png" /><span class="ms-1 d-none d-sm-inline">Menu 3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_Invoices.png" /><span class="ms-1 d-none d-sm-inline">Menu 4</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_customers.png" /><span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_chat-room.png" /><span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_calendar.png" /><span class="ms-1 d-none d-sm-inline">Menu 7</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_help-center.png" /><span class="ms-1 d-none d-sm-inline">Menu 8</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle">
+                                <img src="~/Images/icon_setting.png" /><span class="ms-1 d-none d-sm-inline">Menu 9</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+
+                </div>
+            </div>
+            <div class="col qualificationDetails">
+                <div class="col-sm-8 content2">
+                    <div class="sectionHeading">
+                        <h4>Qualification Details</h4>
+                    </div>
+                    <div class="col-sm-12 form">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Qualifications</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputEducation">Education <span class="required"> *</span></label>
+
+                                        <select asp-for="HighEducation" class="form-control">
+                                            <option value="Post">Select Education </option>
+                                            <option value="Post">Post Graduate </option>
+                                            <option value="Graduate">Graduate</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputPassingYear">Passing year <span class="required"> *</span></label>
+                                        <input asp-for="HighPassingYear" class="form-control" aria-describedby="" placeholder="Enter Passing Year" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputHSC">HSC <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="HSC" aria-describedby="" placeholder="Enter HSC">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputDiploma">Diploma <span class="required"> </span></label>
+                                        <input type="text" class="form-control" asp-for="Diploma" aria-describedby="" placeholder="Enter Diploma">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputGraduation">Graduation <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="Graduate" aria-describedby="" placeholder="Enter Graduation">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputPostGraduation">Post-Graduation <span class="required"> *</span></label>
+                                        <input type="text" class="form-control" asp-for="PostGraduate" aria-describedby="" placeholder="Enter Post-Graduation">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputSpCerfication">Special Certification, if any <span class="required"> *</span></label>
+                                        <select asp-for="SpecialCertification" class="form-control">
+                                            <option value="DRA">Select Certification</option>
+                                            <option value="DRA">DRA Certification</option>
+                                            <option value="NISM">NISM Certification</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Other Qualifications </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputCerfication">Certification <span class="required"> </span></label>
+                                        <input type="text" class="form-control" asp-for="CertificationOther" aria-describedby="" placeholder="Enter Certification">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="inputPassingYear2">Passing Year <span class="required"> </span></label>
+                                    
+                                        <input type="text" class="form-control" asp-for="OtherCertificatePassingYear" aria-describedby="" placeholder="Enter Passing Year">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-group">
+                                        <label for="inputPercentage">Percentage <span class="required"> </span></label>
+                                        <input type="text" class="form-control" asp-for="PercentageOther" aria-describedby="" placeholder="Enter Percentage">
+                                    </div>
+                                </div>
+                            </div><br /><br />
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-previous" onclick="handlePrevImageClick()"><img src="~/Images/icon_previous.png" /><label> Previous</label></button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">&nbsp;</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-next btn-pullright" onclick="handleImageClick()">Next<img src="~/Images/icon_next.png" /></button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/jquery.min.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js"></script>
+    <script>
+        function handlePrevImageClick() {
+
+            LocalStorage();
+            var url = '@Url.Action("PersonalDetails", "CandidateEntry")';
+            window.location.href = url;
+        }
+        function validateForm() {
+
+        }
+
+
+        $(document).ready(function () {
+
+        });
+        function validateForm() {
+            var highEducation = document.getElementById('HighEducation').value;
+            var highPassingYear = document.getElementById('HighPassingYear').value;
+            var hsc = document.getElementById('HSC').value;
+            var diploma = document.getElementById('Diploma').value;
+            var graduate = document.getElementById('Graduate').value;
+            var postGraduate = document.getElementById('PostGraduate').value;
+            var specialCertification = document.getElementById('SpecialCertification').value;
+            var certificationOther = document.getElementById('CertificationOther').value;
+            var otherCertificatePassingYear = document.getElementById('OtherCertificatePassingYear').value;
+            var percentageOther = document.getElementById('PercentageOther').value;
+
+
+            if (highEducation.trim() === "") {
+                alert("Education is required");
+                return false;
+            }
+
+            // Validation for HighPassingYear
+            if (!/^[0-9]*$/.test(highPassingYear)) {
+                alert("Passing Year must be a Year");
+                return false;
+            }
+
+            // Validation for HSC
+            if (hsc.trim() === "") {
+                alert("HSC is required");
+                return false;
+            }
+
+            // Validation for Diploma
+            if (!/^[0-9]*$/.test(diploma)) {
+                alert("Diploma must be a Year");
+                return false;
+            }
+
+            // Validation for Graduate
+            if (!/^[0-9]*$/.test(graduate)) {
+                alert("Graduate must be a Year");
+                return false;
+            }
+
+            // Validation for PostGraduate
+            if (!/^[0-9]*$/.test(postGraduate)) {
+                alert("Post Graduate must be a Year");
+                return false;
+            }
+
+            // Validation for SpecialCertification
+            if (specialCertification.trim() === "") {
+                alert("Special Certification is required");
+                return false;
+            }
+
+            // Validation for CertificationOther
+            if (certificationOther.trim() === "") {
+                alert("Certification is required");
+                return false;
+            }
+
+            // Validation for OtherCertificatePassingYear
+            if (!/^[0-9]*$/.test(otherCertificatePassingYear)) {
+                alert("Passing Year for Other Certification must be a Year");
+                return false;
+            }
+
+            // Validation for PercentageOther
+            if (isNaN(percentageOther) || percentageOther < 0 || percentageOther > 100) {
+                alert("Percentage must be between 0 and 100");
+                return false;
+            }
+
+            return true;
+        }
+        function handleImageClick() {
+            LocalStorage();
+            if (validateForm()) {
+                var formData = {};
+                $('form input, form select').each(function () {
+                    formData[this.name] = $(this).val();
+                });
+
+                Object.keys(formData).forEach(function (key) {
+                    localStorage.setItem(key, formData[key]);
+                });
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/CandidateEntry/QualificationDetails',
+                    data: formData,
+                    success: function (data) {
+                    
+                        var url = '@Url.Action("WorkExperience", "CandidateEntry")';
+                        window.location.href = url;
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                    }
+                });
+            }
+        }
+
+
+        function LocalStorage() {
+            localStorage.setItem('HighEducation', $('select[name="HighEducation"]').val());
+            localStorage.setItem('HighPassingYear', $('input[name="HighPassingYear"]').val());
+            localStorage.setItem('HSC', $('input[name="HSC"]').val());
+            localStorage.setItem('Diploma', $('input[name="Diploma"]').val());
+            localStorage.setItem('Graduate', $('input[name="Graduate"]').val());
+            localStorage.setItem('PostGraduate', $('input[name="PostGraduate"]').val());
+            localStorage.setItem('SpecialCertification', $('select[name="SpecialCertification"]').val());
+            localStorage.setItem('CertificationOther', $('input[name="CertificationOther"]').val());
+            localStorage.setItem('OtherCertificatePassingYear', $('input[name="OtherCertificatePassingYear"]').val());
+            localStorage.setItem('PercentageOther', $('input[name="PercentageOther"]').val());
+        }
+        $(document).ready(function () {
+            $('form input, form select').each(function () {
+                var storedValue = localStorage.getItem(this.name);
+                if (storedValue !== null) {
+                    $(this).val(storedValue);
+                }
+            });
+        });
+
+
+
+        $(document).ready(function () {
+
+            // Check and set values from localStorage for the new form
+            if (localStorage.getItem('HighEducation') !== null) {
+                $('select[name="HighEducation"]').val(localStorage.getItem('HighEducation'));
+            }
+
+            if (localStorage.getItem('HighPassingYear') !== null) {
+                $('input[name="HighPassingYear"]').val(localStorage.getItem('HighPassingYear'));
+            }
+
+            if (localStorage.getItem('HSC') !== null) {
+                $('input[name="HSC"]').val(localStorage.getItem('HSC'));
+            }
+
+            if (localStorage.getItem('Diploma') !== null) {
+                $('input[name="Diploma"]').val(localStorage.getItem('Diploma'));
+            }
+
+            if (localStorage.getItem('Graduate') !== null) {
+                $('input[name="Graduate"]').val(localStorage.getItem('Graduate'));
+            }
+
+            if (localStorage.getItem('PostGraduate') !== null) {
+                $('input[name="PostGraduate"]').val(localStorage.getItem('PostGraduate'));
+            }
+
+            if (localStorage.getItem('SpecialCertification') !== null) {
+                $('select[name="SpecialCertification"]').val(localStorage.getItem('SpecialCertification'));
+            }
+
+            if (localStorage.getItem('CertificationOther') !== null) {
+                $('input[name="CertificationOther"]').val(localStorage.getItem('CertificationOther'));
+            }
+
+            if (localStorage.getItem('OtherCertificatePassingYear') !== null) {
+                $('input[name="OtherCertificatePassingYear"]').val(localStorage.getItem('OtherCertificatePassingYear'));
+            }
+
+            if (localStorage.getItem('PercentageOther') !== null) {
+                $('input[name="PercentageOther"]').val(localStorage.getItem('PercentageOther'));
+            }
+
+            // Remove items from localStorage after setting values
+            localStorage.removeItem('HighEducation');
+            localStorage.removeItem('HighPassingYear');
+            localStorage.removeItem('HSC');
+            localStorage.removeItem('Diploma');
+            localStorage.removeItem('Graduate');
+            localStorage.removeItem('PostGraduate');
+            localStorage.removeItem('SpecialCertification');
+            localStorage.removeItem('CertificationOther');
+            localStorage.removeItem('OtherCertificatePassingYear');
+            localStorage.removeItem('PercentageOther');
+        });
+    </script>
+</body>
+
+</html>
