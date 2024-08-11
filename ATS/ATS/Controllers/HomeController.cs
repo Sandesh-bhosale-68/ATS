@@ -10,7 +10,12 @@ namespace ATS.Controllers
     {
        
 
+       public IActionResult Sandesh()
+        {
+           
 
+            return View();
+        } 
         public IActionResult Index()
         {
            
